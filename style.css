@@ -132,7 +132,7 @@ input::placeholder {
 @media screen and (min-width: 760px) {
 
     .sign-up {
-        padding: 1.5rem;
+        padding: 1rem;
         border-radius: 2.5rem;
         -webkit-border-radius: 2.5rem;
         -moz-border-radius: 2.5rem;
@@ -160,7 +160,7 @@ input::placeholder {
     .main-cont {
         grid-column: 1;
         grid-row: 1;
-        padding: clamp(1rem, 3vw, 5rem);
+        padding: clamp(1rem, 2vw, 5rem);
         display: flex;
         flex-direction: column;
     }
@@ -233,7 +233,7 @@ input::placeholder {
         cursor: pointer;
         transform: scale(1.03);
         outline: none!important;
-        background-image: linear-gradient(to right, hsl(4, 100%, 67%), hsl(24, 77%, 54%));
+        background-image: linear-gradient(to right, hsl(4, 100%, 67%) 30%, hsl(24, 77%, 54%));
         transition: transform .5s;
         -webkit-transition: transform .5s;
         -moz-transition: transform .5s;
@@ -248,5 +248,4 @@ input::placeholder {
     input {
         cursor: pointer;
     }
-    
 }
