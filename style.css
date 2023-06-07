@@ -1,5 +1,6 @@
 :root {
 --col-prim-tomato: hsl(4, 100%, 67%);
+--col-prim-tomato-backg: hsla(4, 100%, 67%, 0.1);
 --col-neut-dark-slate-grey: hsl(234, 29%, 20%);
 --col-neut-charcoal-grey: hsl(235, 18%, 26%);
 --col-neut-grey: hsl(231, 7%, 60%);
@@ -75,6 +76,7 @@ ul.updates-list li::before {
 
 form {
     margin-top:1.5rem;
+    position: relative;
 }
 
 label {
@@ -88,10 +90,17 @@ input {
     padding: 1.2rem;
     border-radius: .7rem;
     border: 1px solid var(--col-neut-grey);
+    
 }
 
 input::placeholder {
     font-size: 1rem;
+}
+
+.invalid {
+    border: 2px solid var(--col-prim-tomato);
+    color: var(--col-prim-tomato);
+    background-color: var(--col-prim-tomato-backg);
 }
 
 .btn {
@@ -109,6 +118,15 @@ input::placeholder {
     -moz-border-radius: .5rem;
     -ms-border-radius: .5rem;
     -o-border-radius: .5rem;
+}
+
+.error {
+    color: var(--col-prim-tomato);
+    font-weight: normal;
+    font-size: .8rem;
+    position: absolute;
+    right: 0;
+    top: .2rem;
 }
 
 @media screen and (min-width: 760px) {
@@ -165,7 +183,7 @@ input::placeholder {
 
 .confirmation {
     padding: 2rem 1rem;
-    height: 98dvh;
+    min-height: 98dvh;
     display: flex;
     flex-direction: column;
     background-color: var(--col-white);
@@ -185,4 +203,50 @@ input::placeholder {
 
 .confirmation .btn {
     margin-top: auto;
+}
+
+@media screen and (min-width: 480px) {
+    .confirmation {
+        min-height: 0;
+        max-width: 31rem;
+        padding: clamp(1.5rem, 10vw, 3.5rem);
+        gap: 2.5rem;
+        border-radius: 2rem;
+    }
+
+    .confirmation img {
+        margin-top: 0;
+    }
+
+    .confirmation h2{
+        font-size: 3.5rem;
+        padding: 0;
+    }
+
+    .confirmation p {
+        line-height: 1.5rem;
+    }
+}
+
+@media(hover: hover) and (pointer: fine) {
+    .btn:hover, .btn:focus-visible {
+        cursor: pointer;
+        transform: scale(1.03);
+        outline: none!important;
+        background-image: linear-gradient(to right, hsl(4, 100%, 67%), hsl(24, 77%, 54%));
+        transition: transform .5s;
+        -webkit-transition: transform .5s;
+        -moz-transition: transform .5s;
+        -ms-transition: transform .5s;
+        -o-transition: transform .5s;
+        -webkit-transform: scale(1.03);
+        -moz-transform: scale(1.03);
+        -ms-transform: scale(1.03);
+        -o-transform: scale(1.03);
+    }
+
+    input {
+        cursor: pointer;
+    }
+    
 }
